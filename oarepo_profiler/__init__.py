@@ -16,7 +16,7 @@ class ProfilingMiddleware:
     def __call__(self, *args, **kwargs):
         if not self.initialized:
             self.initialize()
-        return application(*args, **kwargs)
+        return self.application(*args, **kwargs)
 
     def initialize(self):
         from werkzeug.middleware import profiler
