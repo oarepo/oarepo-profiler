@@ -52,14 +52,13 @@ script:
 after_success:
   - coveralls
 
-#deploy:
-#  provider: pypi
-#  user: TODO: PYPIUSERNAME
-#  password:
-#    secure: TODO: PYPISECUREHASH
-#  distributions: "compile_catalog sdist bdist_wheel"
-#  on:
-#    tags: true
-#    python: "3.6"
-#    repo: cis/cis-theses-repository
-#    condition: $DEPLOY = true
+deploy:
+  provider: pypi
+  user: "__token__"
+  password:
+    secure: "T2x/XM7AnK96bIYua1MOKKTOd9fKSNpn1pvzmyFHXcpJsv4WZ2IOFs4i/oz8JvuUo3bsBOw0nWgJbO+DDtwqFeDvqWmIvbEFtcHPc/ng08itPYfAGJLH6AMo2N1jKXPBvMuprAbOKAEGdDV2FY6sw8wLLZhu+er5zuVyBcvzPDeCXMAUqrXlg6Uzm6YkmYzu37OMbMaKB3V/lzk/+icfmqp5AMI5kh2U4FOp1fHixzoJdDu38Lq95unNHvAv7ERS0VLx3vNZYBhnevblDIlP5fHq48YTbt00k30ikK0wmzACl0sOjIwmVYg0meREgzuVaOcIyFPmflK58Ne9EfcMA/YTDUebVnbxXhtmO5emI1TMeB9J1El01ahu28/H0deqM2lqEGHHhlJDvlSxIhY9p/uGzI/WgJPMgUZHUagjJ1+WtvVMyp+TmABoK5R7YbQIl5uRQTP4FCO6u5AE3VKQoRKJHRjzl6JEENLXodstQSO7EXvZWHyHgY/24lOW3Ft11nZwllkOAezdELY/Bb6wm5RumCliNtJe/PycG66cpUTDspnfARTrzKpxKwYZFj8yoBznFEtmYS36tM/xTxU7zYYtX0S+woinoB91p+zB72rtm7KcvQoCe86HBrhw8cFUSVsLNMpUxpIyVC5cKiA3MkSR3wI78MyJUjOBeOFi20I="
+  on:
+    tags: true
+    branch: master
+  distributions: "sdist bdist_wheel"
+  skip_existing: true
