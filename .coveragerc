@@ -1,0 +1,4 @@
+[run]
+omit =
+    cis_krokd_repository/alembic/*
+    cis_krokd_repository/admin.py
